@@ -5,7 +5,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import { ExpandMore } from '@mui/icons-material'
 
-const WorkRooms = () => {
+const Workspace = () => {
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
     const handleClick = (event) => {
@@ -42,4 +42,4 @@ const WorkRooms = () => {
     );
 }
 
-export default WorkRooms;
+export default Workspace;
