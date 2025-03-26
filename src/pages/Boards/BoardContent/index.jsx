@@ -3,7 +3,7 @@ const BoardContent = () => {
     return (
         <div>
             <Box sx={{
-                backgroundColor: 'primary.main',
+                backgroundColor: (theme) => (theme.palette.mode==='dark' ? '#2c3e50' : '#34495e'),
                 width: '100%',
                 height: (theme) => `calc(100vh - ${theme.workWithMe.appBarHeight} - ${theme.workWithMe.boardBarHeight})`,
                 display: 'flex',

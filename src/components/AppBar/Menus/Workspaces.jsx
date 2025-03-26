@@ -17,6 +17,9 @@ const Workspace = () => {
     return (
         <Box>
             <Button
+                sx={{
+                    color: 'white'
+                }}
                 id="Workspace-button"
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
