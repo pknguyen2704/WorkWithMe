@@ -1,16 +1,14 @@
+
 import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
 import AppBar from '~/components/AppBar'
-import BoardBar from './BoardBar'
-import BoardContent from './BoardContent'
-function Board() {
+import PomodoroContent from './PomodoroContent';
+const Pomodoros = () => {
     return (
         <Container disableGutters maxWidth={false} sx={{height: '100vh'}}>
             <AppBar></AppBar>
-            <BoardBar></BoardBar>
-            <BoardContent></BoardContent>
+            <PomodoroContent></PomodoroContent>
         </Container>
     );
 }
 
-export default Board;
+export default Pomodoros;

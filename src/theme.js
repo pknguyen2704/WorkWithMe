@@ -27,10 +27,13 @@ const theme = extendTheme({
                 root: {
                     textTransform: 'none',
                     fontSize: '1rem',
+                    color: 'white',
                     borderWidth: '0.5px',
+                    borderColor: 'white',
                     '&:hover': {
-                        borderWidth: '1px'
-                    }
+                        borderWidth: '0.5px',
+                        borderColor: 'white'
+                    },
                 },
             },
         },
