@@ -29,8 +29,8 @@ const AppBar = () => {
                         color: 'primary.main'
                     }}></AppsIcon>
                     <Box sx={{display:'flex', alignItems: 'center', gap: 0.5}}>
-                        <SvgIcon component={workWithMeLogo} inheritViewBox  sx={{color: 'primary.main'}}/>
-                        <Typography variant='span' sx={{fontSize: '1.2rem', fontWeight: 'bold', color: 'primary.main'}}>WorkWithMe</Typography>
+                        <SvgIcon component={workWithMeLogo} inheritViewBox  fontSize='small' sx={{color: 'primary.main'}}/>
+                        <Typography variant='span' sx={{fontSize: '1.5rem', fontWeight: 'bold', color: 'primary.main'}}>WorkWithMe</Typography>
                     </Box>
                     <Home></Home>
                     <Pomodoro></Pomodoro>
