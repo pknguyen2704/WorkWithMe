@@ -20,8 +20,8 @@ const Workspace = () => {
                 sx={{
                     color: 'white'
                 }}
-                id="Workspace-button"
-                aria-controls={open ? 'basic-menu' : undefined}
+                id="basic-button-workspace"
+                aria-controls={open ? 'basic-menu-workspace' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
@@ -35,7 +35,7 @@ const Workspace = () => {
                 open={open}
                 onClose={handleClose}
                 MenuListProps={{
-                'aria-labelledby': 'basic-button',
+                'aria-labelledby': 'basic-button-workspace',
                 }}
             >
                 <MenuItem onClick={handleClose}>Join Workspace</MenuItem>

@@ -1,41 +1,58 @@
 import React from 'react';
 import Box from '@mui/material/Box'
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import RestartAltIcon from '@mui/icons-material/RestartAlt'
 import SettingsIcon from '@mui/icons-material/Settings';
+
 const PomodoroClock = () => {
     return (
-        <Box>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 4
+        }}>
             <Box sx={{
                 display:'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: 2
+                gap: 3
             }}>
                 <Button variant="outlined"
                     sx={{
                         borderRadius: '50px',
                         color: 'white',
+                        borderColor: 'white',
+                        fontSize: '1rem',
+                        fontWeight: 'bold',
                         '&:hover': {
                             bgcolor: 'white',
-                            color: 'black'
+                            color: 'black',
+                            borderColor: 'white',
                         }
-                    }}>Pomodoro</Button>
+                    }}>pomodoro</Button>
                 <Button variant="outlined" 
                     sx={{
                         borderRadius: '50px',
                         color: 'white',
+                        borderColor: 'white',
+                        fontSize: '1rem',
+                        fontWeight: 'bold',
                         '&:hover': {
                             bgcolor: 'white',
-                            color: 'black'
+                            color: 'black',
+                            borderColor: 'white',
                         }
                     }}>short break</Button>
                 <Button variant="outlined" sx={{
                         borderRadius: '50px',
                         color: 'white',
+                        borderColor: 'white',
+                        fontSize: '1rem',
+                        fontWeight: 'bold',
                         '&:hover': {
                             bgcolor: 'white',
-                            color: 'black'
+                            color: 'black',
+                            borderColor: 'white',
                         }
                     }}>long break</Button>
             </Box>
@@ -44,26 +61,34 @@ const PomodoroClock = () => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <h1>25:00</h1>
+                <Typography variant='h1' sx={{
+                    fontSize: '10rem',
+                    fontWeight: '400',
+                    color: 'white'
+                }}>25:00</Typography>
             </Box>
             <Box sx={{
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: 2, 
+                gap: 3, 
             }}>
                 <Button variant="outlined" 
                 sx={{
                     borderRadius: '50px',
+                    borderColor: 'white',
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
                     bgcolor: 'white',
                     color: 'black',
-                    paddingX: 4,
+                    paddingX: 5,
                     '&:hover': {
-                        color: 'white'
+                        color: 'white',
+                        borderColor: 'white'
                     }
                 }}>
-                Start</Button>
-                <RestartAltIcon sx={{color:'white', cursor: 'pointer'}}/>
+                start</Button>
+                <RestartAltIcon sx={{color:'white', cursor: 'pointer'}} />
                 <SettingsIcon sx={{color:'white', cursor: 'pointer'}}/>
             </Box>
         </Box>
