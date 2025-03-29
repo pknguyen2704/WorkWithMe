@@ -7,10 +7,9 @@ const BoardContent = () => {
 
     return (
         <Box sx={{
-            backgroundColor: 'inherit',
+            backgroundColor: (theme) => (theme.palette.mode==='dark' ? '#2c3e50' : '#34495e'), 
             width: '100%',
-            height: 'fit-content',
-            // height: (theme) => theme.workWithMe.boardContentHeight,
+            height: (theme) => theme.workWithMe.boardContentHeight,
             display: 'flex',
             overflowX: 'auto',
             overflowY: 'hidden'
