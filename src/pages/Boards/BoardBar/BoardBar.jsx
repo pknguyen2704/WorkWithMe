@@ -9,7 +9,7 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import { Button, Tooltip } from '@mui/material'
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-
+import { capitalizeFirstLetter } from '~/utils/formatters'
 const MENU_STYLE = {
     color:'white',
     bgcolor: 'transparent',
@@ -23,7 +23,8 @@ const MENU_STYLE = {
         bgcolor: 'primary.50'
     }
 }
-const BoardBar = () => {
+const BoardBar = (props) => {
+    const board = props.board 
     return (
         <div>
             <Box sx={{
@@ -42,13 +43,13 @@ const BoardBar = () => {
                 <Chip 
                     sx={MENU_STYLE}
                     icon={<DashboardIcon />} 
-                    label="My dashboard" 
+                    label={board?.title}
                     clickable
                 />
                 <Chip 
                     sx={MENU_STYLE}
                     icon={<PublicIcon />} 
-                    label="Public/private to-do lists" 
+                    label={capitalizeFirstLetter(board?.type)}
                     clickable
                 />
                 <Chip 
