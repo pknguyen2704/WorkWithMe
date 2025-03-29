@@ -5,8 +5,8 @@ function App() {
 
   return (
     <>
-      {/* <Board></Board> */}
-      <Pomodoro></Pomodoro>
+      <Board></Board>
+      {/* <Pomodoro></Pomodoro> */}
     </>
   )
 }

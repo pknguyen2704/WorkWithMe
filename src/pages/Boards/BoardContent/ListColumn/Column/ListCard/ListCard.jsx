@@ -12,7 +12,7 @@ import Card from './Card/Card';
 
 
 
-const ListCard = () => {
+const ListCard = ({cards}) => {
     return (
         <Box sx={{
             p: '0 5px',
@@ -25,8 +25,7 @@ const ListCard = () => {
             overflowY: 'auto',
             maxHeight: (theme) => `calc(${theme.workWithMe.boardContentHeight} - ${theme.spacing(5)} - ${(theme) => theme.workWithMe.columnHeaderHeight} - ${(theme) => theme.workWithMe.columnFooterHeight})`
         }}>
-            <Card/>
-            <Card temporaryHideMedia/>
+        {cards?.map(card => <Card key={card._id} card={card}/>)}
             
         </Box>
     );

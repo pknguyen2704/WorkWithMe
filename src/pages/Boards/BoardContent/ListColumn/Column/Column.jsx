@@ -21,9 +21,9 @@ import GroupIcon from '@mui/icons-material/Group';
 import CommentIcon from '@mui/icons-material/Comment';
 import AttachmentIcon from '@mui/icons-material/Attachment';
 import ListCard from './ListCard/ListCard';
+import { mapOrder } from '~/utils/sorts';
 
-
-const Column = () => {
+const Column = ({column}) => {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleClick = (event) => {
@@ -32,6 +32,8 @@ const Column = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const orderdCards = mapOrder(column?.cards, column?.cardOrderIds, '_id')
+    
     return (
         <Box sx={{
             minWidth: '300px',
@@ -40,7 +42,7 @@ const Column = () => {
             ml: 2,
             borderRadius: '6px',
             height: 'fit-content',
-            maxHeight: (theme) => `calc(${theme.workWithMe.boardContentHeight} - ${theme.spacing(5)})`
+            maxHeight: (theme) => `calc(${theme.workWithMe.boardContentHeight} - ${theme.spacing(2)})`
 
         }}>
             <Box sx={{
@@ -55,7 +57,7 @@ const Column = () => {
                     fontWeight: 'bold',
                     cursor: 'pointer',
                 }}>
-                Colume Title</Typography>
+                {column?.title}</Typography>
                 <Box>
                 <Tooltip title="More option">
                     <ExpandMore
@@ -108,7 +110,7 @@ const Column = () => {
                     </Menu>
                 </Box>
             </Box>
-            <ListCard/>
+            <ListCard cards={orderdCards}/>
 
             <Box sx={{
                 height: (theme) => theme.workWithMe.columnFooterHeight,
