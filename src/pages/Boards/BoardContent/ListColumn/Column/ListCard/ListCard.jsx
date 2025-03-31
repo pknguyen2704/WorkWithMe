@@ -10,24 +10,26 @@ import CommentIcon from '@mui/icons-material/Comment';
 import AttachmentIcon from '@mui/icons-material/Attachment';
 import Card from './Card/Card';
 
-
+import {SortableContext, verticalListSortingStrategy} from '@dnd-kit/sortable';
 
 const ListCard = ({cards}) => {
     return (
-        <Box sx={{
-            p: '0 5px',
-            m: '0 5px',
-            display:'flex',
-            flexDirection: 'column',
-            // p: 2,
-            gap: 1,
-            overflowX: 'hidden', 
-            overflowY: 'auto',
-            maxHeight: (theme) => `calc(${theme.workWithMe.boardContentHeight} - ${theme.spacing(5)} - ${(theme) => theme.workWithMe.columnHeaderHeight} - ${(theme) => theme.workWithMe.columnFooterHeight})`
-        }}>
-        {cards?.map(card => <Card key={card._id} card={card}/>)}
-            
-        </Box>
+        <SortableContext items={cards?.map(c => c._id)} strategy={verticalListSortingStrategy}>
+            <Box sx={{
+                p: '0 5px',
+                m: '0 5px',
+                display:'flex',
+                flexDirection: 'column',
+                // p: 2,
+                gap: 1,
+                overflowX: 'hidden', 
+                overflowY: 'auto',
+                maxHeight: (theme) => `calc(${theme.workWithMe.boardContentHeight} - ${theme.spacing(5)} - ${(theme) => theme.workWithMe.columnHeaderHeight} - ${(theme) => theme.workWithMe.columnFooterHeight})`
+            }}>
+            {cards?.map(card => <Card key={card._id} card={card}/>)}
+                
+            </Box>
+        </SortableContext>
     );
 }
 

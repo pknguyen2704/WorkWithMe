@@ -27,13 +27,15 @@ import {CSS} from '@dnd-kit/utilities';
 
 const Column = ({column}) => {
     const {
-        attributes,listeners,setNodeRef, transform, transition} = useSortable({id: column._id, data: {...column}
+        attributes,listeners,setNodeRef, transform, transition, isDragging} = useSortable({id: column._id, data: {...column}
 
     });
     
     const dndKitColumnStyles = {
         transform: CSS.Translate.toString(transform),
-        transition
+        transition,
+        height: '100%',
+        opacity: isDragging ? 0.5 : undefined
     };
     
     const [anchorEl, setAnchorEl] = useState(null)
@@ -47,11 +49,13 @@ const Column = ({column}) => {
     const orderdCards = mapOrder(column?.cards, column?.cardOrderIds, '_id')
     
     return (
+        <div ref = {setNodeRef}
+            style={dndKitColumnStyles}
+            {...attributes} 
+            >
+        
         <Box
-        ref = {setNodeRef}
-        style={dndKitColumnStyles}
-        {...attributes} 
-        {...listeners}
+            {...listeners}
         sx={{
             minWidth: '300px',
             maxWidth: '300px',
@@ -143,6 +147,7 @@ const Column = ({column}) => {
             </Box>
 
         </Box>
+        </div>
     );
 }
 
