@@ -1,5 +1,6 @@
 import Board from "~/pages/Boards/_id"
 import Pomodoro from "~/pages/Pomodoro/Pomodoro"
+import Workspace from "./pages/Workspace/Workspace"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Board></Board>
       {/* <Pomodoro></Pomodoro> */}
+      {/* <Workspace></Workspace> */}
     </>
   )
 }

@@ -25,11 +25,11 @@ const Workspace = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
-                endIcon={<ExpandMore />}
+                // endIcon={<ExpandMore />}
             >
                 Workspace
             </Button>
-            <Menu
+            {/* <Menu
                 id="Workspace-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -40,7 +40,7 @@ const Workspace = () => {
             >
                 <MenuItem onClick={handleClose}>Join Workspace</MenuItem>
                 <MenuItem onClick={handleClose}>Create Workspace</MenuItem>
-            </Menu>
+            </Menu> */}
         </Box>
     );
 }

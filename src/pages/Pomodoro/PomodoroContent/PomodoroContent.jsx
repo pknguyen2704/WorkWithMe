@@ -14,7 +14,6 @@ const PomodoroContent = () => {
             height: (theme) => theme.workWithMe.pomodoroContentHeight,
             display: 'flex',
             justifyContent: 'center',
-            // position: 'relative',
             alignItems: 'center'
         }}>
             <PomodoroMain></PomodoroMain>

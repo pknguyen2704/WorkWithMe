@@ -10,7 +10,7 @@ const Task = () => {
             cursor:'pointer',
             boxShadow: '0 1px 1px rgba(0,0,0,0.2)',
             overflow: 'unset',
-            m: '10px'
+            m: '5px 0'
         }}>
             <Box sx={{
                 display: 'flex',

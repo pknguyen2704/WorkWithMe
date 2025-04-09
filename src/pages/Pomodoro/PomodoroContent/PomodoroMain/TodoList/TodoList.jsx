@@ -14,6 +14,8 @@ import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import TaskList from './TaskList/TaskList';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const PomodoroTodolist = () => {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -27,32 +29,42 @@ const PomodoroTodolist = () => {
     return (
         <Box sx={{
             display:'flex-direction',
-            flexDirection: 'colume',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             minHeight: 'fit-content',
             maxHeight: 'fit-content',
-            bgcolor: 'blue'
+            width: 'inherit',
+            // bgcolor: 'blue',
+
         }}>
         <Box sx={{
             color: 'white',
             display: 'flex',
             justifyContent: 'space-between',
-            borderBottom: '2px solid white',
+            alignItems: 'center',
+            borderBottom: '1px solid white',
+
+            p: '12px 0',
+
         }}>
             <Typography sx={{
-                fontSize: '1rem',
+                fontSize: '1rem !important',
                 fontWeight: 'bold',
                 cursor: 'pointer',
+                // p: '0 0 0 12px'
             }}>Tasks</Typography>
             <Box>
                 <Tooltip title="More option">
                     <ExpandMore
                         sx={{
-                            color: 'text.primary',
+                            color: 'white',
                             cursor: 'pointer',
-                            bgcolor: 'rgba(1, 1, 1, 0.1)',
-                            borderRadius: '10px'
+                            bgcolor: 'rgba(1, 1, 1, 0.3)',
+                            borderRadius: '5px',
+                            '&:hover': {
+                                bgcolor: 'rgba(1, 1, 1, 0.5)'
+                            }
                         }}
                         id="basic-column-dropdown"
                         aria-controls={open ? 'basic-menu-column-dropdown' : undefined}
@@ -72,55 +84,40 @@ const PomodoroTodolist = () => {
                     >
                         <MenuItem>
                             <ListItemIcon><AddCardIcon fontSize='small'/></ListItemIcon>
-                            <ListItemText>Add new card</ListItemText>
+                            <ListItemText>Add new task</ListItemText>
                         </MenuItem>
                         <MenuItem>
-                            <ListItemIcon><ContentCutIcon fontSize='small'/></ListItemIcon>
-                            <ListItemText>Cut</ListItemText>
-                        </MenuItem>
-                        <MenuItem>
-                            <ListItemIcon><ContentCopyIcon fontSize='small'/></ListItemIcon>
-                            <ListItemText>Copy</ListItemText>
-                        </MenuItem>
-                        <MenuItem>
-                            <ListItemIcon><ContentPasteIcon fontSize='small'/></ListItemIcon>
-                            <ListItemText>Paste</ListItemText>
+                            <ListItemIcon><DeleteIcon fontSize='small'/></ListItemIcon>
+                            <ListItemText>Delete this task</ListItemText>
                         </MenuItem>
                         <Divider/>
                         <MenuItem>
                             <ListItemIcon><DeleteIcon fontSize='small'/></ListItemIcon>
-                            <ListItemText>Remove this column</ListItemText>
+                            <ListItemText>Clear all tasks</ListItemText>
                         </MenuItem>
-                        <MenuItem>
-                            <ListItemIcon><ArchiveIcon fontSize='small'/></ListItemIcon>
-                            <ListItemText>Save this column</ListItemText>
-                        </MenuItem>
-
                     </Menu>
             </Box>
         </Box>
         <Box>
-            <TaskList>
-
-            </TaskList>
+            <TaskList/>
             <Box sx={{
                 height: (theme) => theme.workWithMe.taskFooterHeight,
                 p: 2,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '3px dashed white',
+                border: '2px dashed white',
                 borderRadius: '10px',
-                color: 'white'
+                color: 'white',
+                opacity: '0.5',
+                '&:hover': {
+                    opacity: '1'
+                }
             }}>
-                <Button startIcon={<AddCardIcon/> }>Add Task</Button>
-                <Tooltip title='Drag to move'>
-                    <DragHandleIcon sx={{cursor:'pointer'}}/>
-                </Tooltip>
+            <Button startIcon={<AddCircleIcon/>} sx={{
+                color: 'white'
+            }}>Add Task</Button>
             </Box>
-        </Box>
-        <Box >
-            Footer
         </Box>
         </Box>
 

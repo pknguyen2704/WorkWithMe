@@ -9,7 +9,10 @@ const PomodoroClock = () => {
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 4
+            p: '20px 50px',
+            gap: 4,
+            // backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            borderRadius: '10px'
         }}>
             <Box sx={{
                 display:'flex',

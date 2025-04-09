@@ -5,9 +5,13 @@ const APP_BAR_HEIGHT = '56px'
 const BOARD_BAR_HEIGHT = '60px'
 const BOARD_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT} - ${BOARD_BAR_HEIGHT})`
 const POMODORO_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT})`
+const WORKSPACE_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT})`
+const WORKSPACE_BAR_HEIGHT = '60px'
+
 const COLUMN_HEADER_HEIGHT = '50px'
 const COLUMN_FOOTER_HEIGHT = '56px'
 const TASK_FOOTER_HEIGHT = '60px'
+
 const theme = extendTheme({
     workWithMe: {
         appBarHeight: APP_BAR_HEIGHT,
@@ -16,7 +20,9 @@ const theme = extendTheme({
         columnHeaderHeight: COLUMN_HEADER_HEIGHT,
         columnFooterHeight: COLUMN_FOOTER_HEIGHT,
         pomodoroContentHeight: POMODORO_CONTENT_HEIGHT,
-        taskFooterHeight: TASK_FOOTER_HEIGHT
+        taskFooterHeight: TASK_FOOTER_HEIGHT,
+        workspaceContentHeight: WORKSPACE_CONTENT_HEIGHT,
+        workspaceBarHeight: WORKSPACE_BAR_HEIGHT
     },
     colorSchemes: {
         // light: {

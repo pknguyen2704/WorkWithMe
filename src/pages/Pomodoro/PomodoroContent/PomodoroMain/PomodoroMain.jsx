@@ -10,27 +10,16 @@ import PomodoroTodolist from './TodoList/TodoList'
 const PomodoroMain = () => {
     return (
         <Box sx={{
-                width: '70%',
+                width: '50%',
                 display: 'flex',
                 flexDirection: 'column',
-                backgroundColor: 'rgba(0, 0, 0, 1)',
                 height: 'fit-content',
-                // alignItems: 'center',
-                // position: 'absolute',
-                // top: "50%",
-                // left: "50%",
-                // transform: "translate(-50%, -50%)",
                 justifyContent: 'center',
+                alignItems: 'center',
                 borderRadius: '10px',
                 gap: 4
             }}>
-            <Typography variant='h1' sx={{
-                textAlign:'center',
-                fontSize: '3rem',
-                fontWeight: 'bold',
-                color: 'white',
-                textTransform: 'uppercase',
-            }}>Work With Me</Typography>
+            <img src=''></img>
             <PomodoroClock></PomodoroClock>
             <PomodoroTodolist></PomodoroTodolist>
         </Box>
