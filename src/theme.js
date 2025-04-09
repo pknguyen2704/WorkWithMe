@@ -7,6 +7,7 @@ const BOARD_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT} - ${BOARD_BAR_HEIGH
 const POMODORO_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT})`
 const WORKSPACE_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT})`
 const WORKSPACE_BAR_HEIGHT = '60px'
+const ROOM_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT} - ${WORKSPACE_BAR_HEIGHT})`
 
 const COLUMN_HEADER_HEIGHT = '50px'
 const COLUMN_FOOTER_HEIGHT = '56px'
@@ -22,7 +23,8 @@ const theme = extendTheme({
         pomodoroContentHeight: POMODORO_CONTENT_HEIGHT,
         taskFooterHeight: TASK_FOOTER_HEIGHT,
         workspaceContentHeight: WORKSPACE_CONTENT_HEIGHT,
-        workspaceBarHeight: WORKSPACE_BAR_HEIGHT
+        workspaceBarHeight: WORKSPACE_BAR_HEIGHT,
+        roomHeight: ROOM_HEIGHT
     },
     colorSchemes: {
         // light: {

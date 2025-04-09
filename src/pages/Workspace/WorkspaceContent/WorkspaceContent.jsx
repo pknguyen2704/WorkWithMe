@@ -17,9 +17,8 @@ const WorkspaceContent = () => {
             gap: 3,
             bgcolor: 'rgb(248, 250, 255)'
         }}>
-            {/* <PublicRoom></PublicRoom> */}
-            {/* <RoomBar/> */}
-            <Typography variant='6' sx={{
+            <PublicRoom></PublicRoom>
+            {/* <Typography variant='6' sx={{
                 fontWeight: '600',
                 fontSize: '3rem'
             }}> Join a Focus Room</Typography>
@@ -111,7 +110,7 @@ const WorkspaceContent = () => {
                     }}>Create</Button>
                     
                 </Box>
-            </Box>
+            </Box> */}
             
         </Box>
     );

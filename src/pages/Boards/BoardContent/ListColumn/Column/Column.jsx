@@ -63,7 +63,7 @@ const Column = ({column}) => {
             ml: 2,
             borderRadius: '6px',
             height: 'fit-content',
-            maxHeight: (theme) => `calc(${theme.workWithMe.boardContentHeight} - ${theme.spacing(2)})`
+            maxHeight: (theme) => `calc(${theme.workWithMe.boardContentHeight} - ${theme.spacing(5)})`
 
         }}>
             <Box sx={{
