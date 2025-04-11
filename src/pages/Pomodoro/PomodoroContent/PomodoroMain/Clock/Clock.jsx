@@ -9,9 +9,8 @@ const PomodoroClock = () => {
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            p: '20px 50px',
-            gap: 4,
-            // backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            width: 'inherit',
+            // gap: 4,
             borderRadius: '10px'
         }}>
             <Box sx={{
@@ -64,9 +63,9 @@ const PomodoroClock = () => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Typography variant='h1' sx={{
-                    fontSize: '10rem',
-                    fontWeight: '400',
+                <Typography sx={{
+                    fontSize: '8rem !important' ,
+                    fontWeight: '800',
                     color: 'white'
                 }}>25:00</Typography>
             </Box>

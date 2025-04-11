@@ -9,11 +9,12 @@ const PublicRoom = () => {
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            height: (theme) => theme.workWithMe.workspaceContentHeight,
-            bgcolor: 'rgb(248, 250, 255)',
-            width: 'inherit'
+            height: (theme) => theme.workWithMe.roomHeight,
+            bgcolor: '#95a5a6',
+            width: 'inherit',
+            alignItems:'center',
+            justifyContent: 'center'
         }}>
-            <RoomBar> </RoomBar>
             <ListCam></ListCam>
 
         </Box>

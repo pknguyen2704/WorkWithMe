@@ -2,9 +2,9 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import PersonIcon from '@mui/icons-material/Person';
-import RoomBar from './RoomBar/RoomBar';
-import PublicRoom from './PublicRoom/PublicRoom';
-
+import RoomBar from './Room/RoomBar/RoomBar';
+import PublicRoom from './Room/PublicRoom/PublicRoom';
+import Room from './Room/Room';
 const WorkspaceContent = () => {
     return (
         <Box sx={{
@@ -15,9 +15,9 @@ const WorkspaceContent = () => {
             justifyContent: 'center',
             alignItems: 'center',
             gap: 3,
-            bgcolor: 'rgb(248, 250, 255)'
+            // bgcolor: '#95a5a6'
         }}>
-            <PublicRoom></PublicRoom>
+            <Room> </Room>
             {/* <Typography variant='6' sx={{
                 fontWeight: '600',
                 fontSize: '3rem'
@@ -33,7 +33,7 @@ const WorkspaceContent = () => {
                     flexDirection: 'column',
                     // alignItems: 'center',
                     // justifyContent: 'center',
-                    bgcolor: 'rgb(210, 231, 255)',
+                    bgcolor: '#bdc3c7',
                     borderRadius: '16px',
                     p: '8px',
                     gap: 1
@@ -64,7 +64,8 @@ const WorkspaceContent = () => {
                     </Box>
                     <Button variant="contained" sx={{
                         borderRadius: '12px',
-                        width:`calc(inherit - 8px - 8px)`
+                        width:`calc(inherit - 8px - 8px)`, 
+                        bgcolor: '#7f8c8d'
                     }}>Join</Button>
                     
                 </Box>
@@ -73,9 +74,7 @@ const WorkspaceContent = () => {
                     height:'fit-content',
                     display: 'flex',
                     flexDirection: 'column',
-                    // alignItems: 'center',
-                    // justifyContent: 'center',
-                    bgcolor: 'rgb(210, 231, 255)',
+                    bgcolor: '#bdc3c7',
                     borderRadius: '16px',
                     p: '8px',
                     gap: 1
@@ -106,7 +105,9 @@ const WorkspaceContent = () => {
                     </Box>
                     <Button variant="contained" sx={{
                         borderRadius: '12px',
-                        width:`calc(inherit - 8px - 8px)`
+                        width:`calc(inherit - 8px - 8px)`,
+                        bgcolor: '#7f8c8d'
+
                     }}>Create</Button>
                     
                 </Box>

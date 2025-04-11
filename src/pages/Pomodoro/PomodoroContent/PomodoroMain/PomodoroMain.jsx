@@ -10,7 +10,7 @@ import PomodoroTodolist from './TodoList/TodoList'
 const PomodoroMain = () => {
     return (
         <Box sx={{
-                width: '50%',
+                width:'fit-content',
                 display: 'flex',
                 flexDirection: 'column',
                 height: 'fit-content',
@@ -19,7 +19,6 @@ const PomodoroMain = () => {
                 borderRadius: '10px',
                 gap: 4
             }}>
-            <img src=''></img>
             <PomodoroClock></PomodoroClock>
             <PomodoroTodolist></PomodoroTodolist>
         </Box>

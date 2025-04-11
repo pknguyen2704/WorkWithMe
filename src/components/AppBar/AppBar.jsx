@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Box from '@mui/material/Box'
 import AppsIcon from '@mui/icons-material/Apps';
 import SvgIcon from '@mui/material/SvgIcon'
-import { ReactComponent as workWithMeLogo } from '~/assets/wwm.svg';
+// import { ReactComponent as workWithMeLogo } from '~/assets/wwm.svg';
 import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
@@ -30,14 +30,18 @@ const AppBar = () => {
                 justifyContent: 'space-between',
                 gap: 2,
                 overflowX: 'auto',
-                bgcolor: (theme) => (theme.palette.mode==='dark' ? '#2c3e50' : '#2c3e50')
+                bgcolor: '#7f8c8d'
             }}>
-                <Box sx={{display:'flex', alignItems: 'center', gap: 2}}>
+                <Box sx={{display:'flex', alignItems: 'center', gap: 2, height:'inherit'}}>
                     <AppsIcon sx={{color: 'white'}}></AppsIcon>
-                    <Box sx={{display:'flex', alignItems: 'center', gap: 0.5}}>
+                    {/* <Box sx={{display:'flex', alignItems: 'center', gap: 0.5, height: (theme) => theme.workWithMe.appBarHeight}}>
                         <SvgIcon component={workWithMeLogo} inheritViewBox  fontSize='small' sx={{color: 'white'}}/>
                         <Typography variant='span' sx={{fontSize: '1.5rem', fontWeight: 'bold', color: 'white'}}>WorkWithMe</Typography>
-                    </Box>
+                    </Box> */}
+                    <Box component='img' src='src/assets/logo.svg' sx={{
+                        height: '60%',
+                    }}/>
+
                     <Home></Home>
                     <Pomodoro></Pomodoro>
                     <TodoLists></TodoLists>

@@ -38,7 +38,7 @@ const BoardBar = (props) => {
                 paddingX: 2,
                 overflowX: 'auto',
                 // borderBottom: '1px solid white',
-                bgcolor: (theme) => (theme.palette.mode==='dark' ? '#2c3e50' : '#34495e')
+                bgcolor: '#95a5a6'
             }}>
             <Box sx={{display:'flex', alignItems: 'center', gap: 2}}>
                 <Chip 

@@ -5,7 +5,7 @@ import PomodoroMain from './PomodoroMain/PomodoroMain';
 const PomodoroContent = () => {
     return (
         <Box sx={{
-            backgroundImage: "url('https://studywithme.io/aesthetic-pomodoro-timer/9f1e88521119e2e349d8.jpg')",
+            backgroundImage: "url('src/assets/bg1.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat", 
@@ -16,6 +16,19 @@ const PomodoroContent = () => {
             justifyContent: 'center',
             alignItems: 'center'
         }}>
+            <Box sx={{
+                position: 'absolute',
+                bottom: 16,
+                left: 16,
+                width: '400px',
+                height: '152px',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                boxShadow: 3,
+            }}>
+                <iframe style={{border: 'none'}} src="https://open.spotify.com/embed/playlist/4Zjli1P13J5mmSCD5iKAXK?utm_source=generator&theme=0" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </Box>
+
             <PomodoroMain></PomodoroMain>
         </Box>
     );

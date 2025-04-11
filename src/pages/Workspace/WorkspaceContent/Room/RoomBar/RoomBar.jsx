@@ -11,18 +11,15 @@ import Chip from '@mui/material/Chip'
 
 
 const ROOM_BAR_STYLE = {
-    color: 'rgb(118, 181, 255)',
-    bgcolor: 'white',
+    color: 'white',
+    bgcolor: 'transparent',
     border: 'black',
-    // paddingX: '5px',
     opacity: '0.8',
     borderRadius: '4px',
     '& .MuiSvgIcon-root': { 
-        color: 'rgb(118, 181, 255)',
+        color: 'white',
     },
     '&:hover': {
-        color: 'rgb(118, 181, 255)',
-        bgcolor: 'white',
         opacity: '1',
     }
 }
@@ -36,9 +33,12 @@ const RoomBar = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             p: '0 12px',
+            bgcolor: '#95a5a6'
+            
         }}>   
             <Box sx={{
-                bgcolor: 'rgb(55, 145, 250)',
+                color: 'white',
+                bgcolor: '#7f8c8d',
                 display: 'flex',
                 alignItems:'center',
                 justifyContent: 'space-between',
@@ -47,39 +47,49 @@ const RoomBar = () => {
                 borderRadius: '10px'
             }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 30, height: 30 }}/>
-                <VideocamIcon/>
-                <MicIcon/>
+                
+                <Chip 
+                    sx={ROOM_BAR_STYLE}
+                    icon={<VideocamIcon/>} 
+                    label='Webcam'
+                    clickable
+                />
+                <Chip 
+                    sx={ROOM_BAR_STYLE}
+                    icon={<MicIcon/>} 
+                    label='Microphone'
+                    clickable
+                />
+                
             </Box>
-            <Box>
-                <Pagination count={10} showFirstButton showLastButton />
-            </Box>
+            <Pagination count={10} showFirstButton showLastButton/>
             <Box sx={{
                 display:'flex',
                 gap: 3,
                 alignItems:'center',
                 
             }}>
-            <Chip 
-                sx={ROOM_BAR_STYLE}
-                icon={<FilterListIcon/>} 
-                label='Filter'
-                clickable
+                <Chip 
+                    sx={ROOM_BAR_STYLE}
+                    icon={<FilterListIcon/>} 
+                    label='Filter'
+                    clickable
 
-            />
-            <Chip 
-                sx={ROOM_BAR_STYLE}
-                icon={<ChatIcon/>} 
-                label='Chat'
-                clickable
+                />
+                <Chip 
+                    sx={ROOM_BAR_STYLE}
+                    icon={<ChatIcon/>} 
+                    label='Chat'
+                    clickable
 
-            />
-            <Chip 
-                sx={ROOM_BAR_STYLE}
-                icon={<GroupsIcon/>} 
-                label='112'
-                clickable
+                />
+                <Chip 
+                    sx={ROOM_BAR_STYLE}
+                    icon={<GroupsIcon/>} 
+                    label='112'
+                    clickable
 
-            />
+                />
             </Box>
         </Box>
     );

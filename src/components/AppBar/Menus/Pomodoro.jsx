@@ -20,7 +20,7 @@ const Pomodoro = () => {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
             >
-            Pomodoro
+            Pomodoro Timer
             </Button>
         </Box>
     );

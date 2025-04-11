@@ -20,7 +20,7 @@ const TodoLists = () => {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
             >
-            Todo Lists
+            Todo List
             </Button>
         </Box>
     );

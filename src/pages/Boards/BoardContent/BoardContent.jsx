@@ -199,7 +199,7 @@ const BoardContent = ({board}) => {
         <DndContext collisionDetection={collisionDetectionStrategy} onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
 
             <Box sx={{
-                backgroundColor: (theme) => (theme.palette.mode==='dark' ? '#2c3e50' : '#34495e'), 
+                bgcolor: '#95a5a6', 
                 width: '100%',
                 height: (theme) => theme.workWithMe.boardContentHeight,
                 display: 'flex',
