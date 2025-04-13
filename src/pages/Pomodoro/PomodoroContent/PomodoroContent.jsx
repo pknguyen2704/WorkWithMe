@@ -20,13 +20,13 @@ const PomodoroContent = () => {
                 position: 'absolute',
                 bottom: 16,
                 left: 16,
-                width: '400px',
+                width: '20%',
                 height: '152px',
                 borderRadius: '12px',
                 overflow: 'hidden',
                 boxShadow: 3,
             }}>
-                <iframe style={{border: 'none'}} src="https://open.spotify.com/embed/playlist/4Zjli1P13J5mmSCD5iKAXK?utm_source=generator&theme=0" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style={{border: 'none', padding: '0', height: '152px'}} src="https://open.spotify.com/embed/album/0Nk3XtxznsiaF8XzORxJx3?utm_source=generator&theme=0" width="100%" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </Box>
 
             <PomodoroMain></PomodoroMain>

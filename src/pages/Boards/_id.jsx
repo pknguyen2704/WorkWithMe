@@ -9,18 +9,23 @@ import { fetchBoardDetailsAPI, createNewColumnAPI, createNewCardAPI, updateBoard
 import { generatePlaceholderCard } from '~/utils/formatters'
 import {isEmpty} from 'lodash'
 import { toast } from 'react-toastify'
+import { mapOrder } from '~/utils/sorts'
 
 function Board() {
     const [board, setBoard] = useState(null)
     useEffect(() => {
         const boardID = '67faa39a8ace97b79ca060ec'
         fetchBoardDetailsAPI(boardID).then((board) => {
+            board.columns = mapOrder(board.columns, board.columnOrderIds, '_id')
             board.columns.forEach(column => {
                 if(isEmpty(column.cards)) {
                     column.cards = [generatePlaceholderCard(column)]
                     column.cardOrderIds = [generatePlaceholderCard(column)._id]
                 }
-            });
+                else {
+                    column.cards = mapOrder(column.cards, column.cardOrderIds, '_id')
+                }
+            })
             setBoard(board)
         })
     }, [])
