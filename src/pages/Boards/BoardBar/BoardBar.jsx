@@ -41,12 +41,14 @@ const BoardBar = (props) => {
                 bgcolor: '#95a5a6'
             }}>
             <Box sx={{display:'flex', alignItems: 'center', gap: 2}}>
+            <Tooltip title='Title of Board'>
                 <Chip 
                     sx={MENU_STYLE}
                     icon={<DashboardIcon />} 
                     label={board?.title}
                     clickable
                 />
+            </Tooltip>
                 <Chip 
                     sx={MENU_STYLE}
                     icon={<PublicIcon />} 
