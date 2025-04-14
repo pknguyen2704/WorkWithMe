@@ -1,13 +1,14 @@
 import React from 'react';
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-
+import { useNavigate } from 'react-router-dom';
 const TodoLists = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null)
-    const open = Boolean(anchorEl)
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget)
-    };
+    const navigate = useNavigate()
+    // const [anchorEl, setAnchorEl] = React.useState(null)
+    // const open = Boolean(anchorEl)
+    const handleClick = () => {
+        navigate('/todolist')
+    }
     return (
         <Box sx={{display:'flex', alignItems: 'center', gap: 0.5}}>
             <Button

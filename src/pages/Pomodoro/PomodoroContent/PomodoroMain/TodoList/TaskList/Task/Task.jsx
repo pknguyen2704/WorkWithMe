@@ -1,34 +1,64 @@
-import React from 'react';
-import { Divider, ListItemIcon, ListItemText, Tooltip, Typography } from '@mui/material';
-import Checkbox from '@mui/material/Checkbox';
-import {Card as MuiCard} from '@mui/material';
-import CardContent from '@mui/material/CardContent';
-import Box from '@mui/material/Box'
+import React, { useState } from 'react';
+import { Checkbox, Typography, Card as MuiCard, CardContent, Box } from '@mui/material';
 
 const Task = () => {
-    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+    const [checked, setChecked] = useState(false);
+
+    const handleToggle = () => {
+        setChecked(prev => !prev);
+    };
+    const handleCheckboxChange = (event) => {
+        event.stopPropagation()
+        setChecked(event.target.checked)
+    };
+
     return (
-        <MuiCard sx={{
-            display: 'flex',
-            cursor:'pointer',
-            boxShadow: '0 1px 1px rgba(0,0,0,0.2)',
-            overflow: 'unset',
-            height: (theme) => theme.workWithMe.taskFooterHeight,
-            alignItems:'center',
-        }}>
-            <Checkbox {...label} />
+        <MuiCard
+            onClick={handleToggle}
+            sx={{
+                
+                display: 'flex',
+                alignItems: 'center',
+                height: '64px',
+                borderRadius: '8px',
+                boxShadow: '0 1px 1px rgba(0,0,0,0.2)',
+                backgroundColor: checked ? '#7f8c8d' : 'white',
+                cursor: 'pointer',
+            }}
+        >
+            <Checkbox
+                
+                onChange={handleCheckboxChange}
+                checked={checked}
+                sx={{
+                    color: checked ? 'white' : 'grey',
+                    '&.Mui-checked': {
+                        color: 'white',
+                    },
+                    '& .MuiSvgIcon-root': {
+                        fontSize: 28,
+                    }
+                }}
+            />
             <CardContent sx={{
                 p: 1.5,
                 '&:last-child': {
                     p: 1.5
                 }
             }}>
-                <Typography>
-                Card dau tien
+                <Typography
+                    sx={{
+                        fontWeight: 600,
+                        color: checked ? '#b0b0b0' : '#333',
+                        textDecoration: checked ? 'line-through' : 'none',
+                        fontSize: '1rem !important' 
+                    }}
+                >
+                    Làm xong website
                 </Typography>
             </CardContent>
         </MuiCard>
     );
-}
+};
 
 export default Task;

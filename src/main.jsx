@@ -13,7 +13,7 @@ import { store } from '~/redux/store'
 // cau hinh react router dom
 import { BrowserRouter } from 'react-router-dom'
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename='/'>
+  <BrowserRouter basename="/">
     <Provider store={store}>
       <CssVarsProvider theme={theme}>
         <ConfirmProvider defaultOptions={{

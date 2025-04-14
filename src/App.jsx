@@ -10,7 +10,7 @@ function App() {
         <Navigate to="/home" replace={true} />
       }/>
       <Route path="/home" element={<h1>Đây là trang chủ nhưng mà lười nên chưa làm</h1>}/>
-      <Route path='/todolist/:boardId'element={<Board/>}/>
+      <Route path='/boards/:boardId'element={<Board/>}/>
       <Route path="/pomodoro" element={<Pomodoro/>}/>
       <Route path="/workspace" element={<Workspace/>}/>
       <Route path='*' element={<h1>404 Not Found</h1>}/>
