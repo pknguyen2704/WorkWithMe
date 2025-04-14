@@ -1,10 +1,10 @@
 import axios from 'axios'
 import { API_ROOT } from '~/utils/constants'
 // board API
-export const fetchBoardDetailsAPI = async(boardId) => {
-  const response = await axios.get(`${API_ROOT}/v1/boards/${boardId}`)
-  return response.data
-}
+// export const fetchBoardDetailsAPI = async(boardId) => {
+//   const response = await axios.get(`${API_ROOT}/v1/boards/${boardId}`)
+//   return response.data
+// }
 
 // Column API
 export const createNewColumnAPI = async (newColumnData) => {
