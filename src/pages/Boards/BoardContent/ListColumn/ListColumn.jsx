@@ -8,9 +8,18 @@ import {SortableContext, horizontalListSortingStrategy} from '@dnd-kit/sortable'
 import { TextField } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { toast } from 'react-toastify';
+import { cloneDeep } from 'lodash'
+import { createNewCardAPI } from '~/apis'
+import { createNewColumnAPI } from '~/apis';
+import { generatePlaceholderCard } from '~/utils/formatters';
+import { updateCurrentActiveBoard, selectCurrentActiveBoard } from '~/redux/activeBoard/activeBoardSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
+const ListColumn = ({columns}) => {
+    const dispatch = useDispatch()
 
-const ListColumn = ({columns, createNewColumn, createNewCard, deleteColumnDetails}) => {
+    const board = useSelector(selectCurrentActiveBoard)
+
     const [openNewColumnForm, setOpenNewColumnForm] = useState(false)
     const toggleOpenNewColumnForm = () => setOpenNewColumnForm(!openNewColumnForm)
 
@@ -23,7 +32,19 @@ const ListColumn = ({columns, createNewColumn, createNewCard, deleteColumnDetail
         const newColumnData = {
             title: newColumnTitle
         }
-        await createNewColumn(newColumnData)
+        const createdColumn = await createNewColumnAPI( {
+            ...newColumnData,
+            boardId: board._id
+            }
+        )
+
+        createdColumn.cards = [generatePlaceholderCard(createdColumn)]
+        createdColumn.cardOrderIds = [generatePlaceholderCard(createdColumn)._id]
+        // const newBoard = {...board}
+        const newBoard = cloneDeep(board)
+        newBoard.columns.push(createdColumn)
+        newBoard.columnOrderIds.push(createdColumn._id)
+        dispatch(updateCurrentActiveBoard(newBoard))
 
         toggleOpenNewColumnForm()
         setNewColumnTitle('')
@@ -42,8 +63,6 @@ const ListColumn = ({columns, createNewColumn, createNewCard, deleteColumnDetail
                 return <Column 
                 key={column._id} 
                 column={column} 
-                createNewCard = {createNewCard}
-                deleteColumnDetails = {deleteColumnDetails}
                 />
             })}
             
