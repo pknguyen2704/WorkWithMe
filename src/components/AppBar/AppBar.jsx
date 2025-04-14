@@ -3,6 +3,8 @@ import Box from '@mui/material/Box'
 import AppsIcon from '@mui/icons-material/Apps';
 import SvgIcon from '@mui/material/SvgIcon'
 // import { ReactComponent as workWithMeLogo } from '~/assets/wwm.svg';
+import { ReactComponent as workWithMeLogo } from '~/assets/logo.svg';
+
 import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
@@ -38,7 +40,7 @@ const AppBar = () => {
                         <SvgIcon component={workWithMeLogo} inheritViewBox  fontSize='small' sx={{color: 'white'}}/>
                         <Typography variant='span' sx={{fontSize: '1.5rem', fontWeight: 'bold', color: 'white'}}>WorkWithMe</Typography>
                     </Box> */}
-                    <Box component='img' src='src/assets/logo.svg' sx={{
+                    <Box component={workWithMeLogo} sx={{
                         height: '60%',
                     }}/>
 

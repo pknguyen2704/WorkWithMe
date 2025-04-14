@@ -1,13 +1,14 @@
 import React from 'react';
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-
+import { useNavigate } from 'react-router-dom';
 const Pomodoro = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null)
-    const open = Boolean(anchorEl)
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget)
-    };
+    const navigate = useNavigate()
+    // const [anchorEl, setAnchorEl] = React.useState(null)
+    // const open = Boolean(anchorEl)
+    const handleClick = () => {
+        navigate('/pomodoro')
+    }
     return (
         <Box sx={{display:'flex', alignItems: 'center', gap: 0.5}}>
             <Button
@@ -19,6 +20,7 @@ const Pomodoro = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
+                
             >
             Pomodoro Timer
             </Button>
